@@ -10,6 +10,8 @@
   left: 0px;
   transform: translate(calc(-100% - 15px), calc(-50% + 11px));
   font-size: 10px;
+  line-height: 15px;
+  font-weight: 400;
   margin-right: 8px;
   z-index: 2;
   max-width: 200px;
@@ -19,6 +21,10 @@
 .criipto-jwt-viewer-tooltip a, .criipto-jwt-viewer-tooltip a:hover, .criipto-jwt-viewer-tooltip a:visited {
   color: inherit;
   text-decoration: underline;
+  color: #DDD;
+  font-size: 10px;
+  line-height: 15px;
+  font-weight: 400;
 }
 
 .criipto-jwt-viewer-tooltip .arrow {
