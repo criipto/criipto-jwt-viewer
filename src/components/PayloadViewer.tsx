@@ -120,6 +120,8 @@ function ClaimTooltip(props: ClaimTooltipProps) {
   if (isClaimPath(claim, 'ridNumberIdentifier')) tooltip = "Danish NemID Employee-ID (a persistent pseudonym representing a legal person)"
   if (isClaimPath(claim, '2.5.4.10')) tooltip = "Company Name"
   if (isClaimPath(claim, 'companySignatory')) tooltip = "Company signatories can enter legal agreements on behalf of the company (DK readers: Ledelsesrepræsentant/tegningsberettiget)"
+  if (isClaimPath(claim, 'productionUnit')) tooltip = "P-number: production unit number; denotes the addresses where the company has employees and/or carries out economic activity"
+  if (isClaimPath(claim, 'seNumber')) tooltip = "SE-number: administrative unit an employee belongs to (in case a company runs different activities under the same legal entity)"
   if (isClaimPath(claim, 'hetu')) tooltip = "Finnish SSN"
   if (isClaimPath(claim, 'satu')) tooltip = "Finnish Unique Identification Number"
   if (isClaimPath(claim, 'name') && identityscheme === 'fitupas') tooltip = 'Display name (when available for the user), or sub value received from FTN provider.'
