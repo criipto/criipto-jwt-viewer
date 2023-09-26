@@ -4,28 +4,22 @@ const nodeExternals = require('webpack-node-externals');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const fs = require('fs');
 
-module.exports = {
+const createConfig = (bundleName, type) => ({
   mode: 'production',
   devtool: "source-map",
   experiments: {
     outputModule: true
   },
   entry: {
-    'criipto-jwt-viewer.esm': {
+    [bundleName]: {
       import: path.resolve(__dirname, 'src/index.ts'),
       library: {
-        type: 'module'
-      }
-    },
-    'criipto-jwt-viewer.cjs': {
-      import: path.resolve(__dirname, 'src/index.ts'),
-      library: {
-        type: 'commonjs'
+        type
       }
     }
   },
   externalsPresets: { node: true },
-  externals: [nodeExternals()],
+  externals: [nodeExternals({ importType: type })],
   plugins: [
     new MiniCssExtractPlugin({
       filename: 'criipto-jwt-viewer.css'
@@ -61,4 +55,9 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].js'
   }
-};
+});
+
+module.exports = [
+  createConfig("criipto-jwt-viewer.cjs", "commonjs"),
+  createConfig("criipto-jwt-viewer.esm", "module"),
+];
