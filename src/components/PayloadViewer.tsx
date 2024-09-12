@@ -132,6 +132,13 @@ function ClaimTooltip(props: ClaimTooltipProps) {
       </a>
     </React.Fragment>
   );
+  if (isClaimPath(claim, 'cprNumberStatus')) tooltip = (
+    <React.Fragment>
+      <a href="https://cprservicedesk.atlassian.net/wiki/spaces/CPR/pages/1722384544/Statuskoder+i+CPR" target="_blank">
+        The status of the CPR Number as maintained by CPR Kontoret. Can be used to reason about why some users do not have address data available.
+      </a>
+    </React.Fragment>
+  );
   if (isClaimPath(claim, 'given_name')) tooltip = (
     <React.Fragment>
       <a href="https://openid.net/specs/openid-connect-core-1_0.html#StandardClaims" target="_blank">
